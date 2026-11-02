@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Сторінка контактів та форм обраної особистості">
+    <title>Контакти та Форми — Михайло Остроградський</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header class="contact-header">
+    <h1>Зв'язок та реєстрація</h1>
+		<nav>
+			<ul>
+				<li><a href="index.html">Головна (Біографія)</a></li>
+				<li><a href="contact.html">Контакти та Форми</a></li>
+			</ul>
+		</nav>
+	</header>
+
+    <main style="padding: 20px;">
+        
+        <section style="overflow: hidden; margin-bottom: 30px;">
+            <h2>Про наукову спадщину Остроградського</h2>
+            <img src="images/photo1.jpg" alt="Картинка 1" style="float: left; width: 150px; margin-right: 15px; margin-bottom: 15px;">
+           <p>Михайло Остроградський зробив величезний внесок у розвиток європейської та світової науки. Його фундаментальні праці з математичного аналізу, теоретичної механіки та балістики назавжди увійшли до золотого фонду точних наук.</p>
+            <p>Завдяки своїй геніальності, працелюбності та глибоким знанням він зміг здобути визнання у провідних наукових академіях Європи, а його відкриття і досі активно використовуються у сучасній фізиці та інженерії.</p>
+        </section>
+
+        <hr style="margin: 20px 0;">
+
+        <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+            
+            <section style="flex: 1; min-width: 300px; background: #f9f9f9; padding: 20px; border-radius: 8px;">
+                <h3>Реєстрація</h3>
+                <form action="#" method="POST">
+                    <fieldset>
+                        <legend>Дані користувача</legend>
+                        
+                        <label for="name">Ім'я:</label><br>
+                        <input type="text" id="name" name="name" required placeholder="Введіть ім'я"><br><br>
+
+                        <label for="surname">Прізвище:</label><br>
+                        <input type="text" id="surname" name="surname" required placeholder="Прізвище"><br><br>
+
+                        <label>Стать:</label><br>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Чоловік</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Жінка</label><br><br>
+
+                        <label for="age">Вік:</label><br>
+                        <input type="number" id="age" name="age" min="1" max="120" value="20"><br><br>
+
+                        <label for="birthdate">Дата народження:</label><br>
+                        <input type="date" id="birthdate" name="birthdate"><br><br>
+
+                        <label for="country">Країна проживання:</label><br>
+                        <select id="country" name="country">
+                            <option value="">Оберіть країну проживання</option>
+                            <option value="ua">Україна</option>
+                            <option value="other">Інша</option>
+                        </select><br><br>
+
+                        <label for="phone">Номер телефону:</label><br>
+                        <input type="tel" id="phone" name="phone" placeholder="+38(0XX)XXX-XX-XX"><br><br>
+
+                        <label for="social">Соцмережа:</label><br>
+                        <input type="url" id="social" name="social" placeholder="Посилання на соцмережу"><br><br>
+
+                        <label for="email">Електронна пошта:</label><br>
+                        <input type="email" id="email" name="email" required><br><br>
+
+                        <label for="password">Пароль:</label><br>
+                        <input type="password" id="password" name="password" required minlength="8"><br><br>
+
+                        <div>
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">Чи згідні Ви з умовами?</label>
+                        </div><br>
+
+                        <button type="submit">Зареєструватися</button>
+                        <button type="reset">Відміна</button>
+                    </fieldset>
+                </form>
+            </section>
+
+            <section style="flex: 1; min-width: 250px; background: #f9f9f9; padding: 20px; border-radius: 8px;">
+                <h3>Вхід</h3>
+                <form action="#" method="POST">
+                    <fieldset>
+                        <legend>Авторизація</legend>
+
+                        <label for="login_email">Пошта:</label><br>
+                        <input type="email" id="login_email" name="login_email" required><br><br>
+
+                        <label for="login_pass">Пароль:</label><br>
+                        <input type="password" id="login_pass" name="login_pass" required><br><br>
+
+                        <button type="submit">Вхід</button>
+                    </fieldset>
+                </form>
+            </section>
+
+            <section style="flex: 1; min-width: 300px; background: #f9f9f9; padding: 20px; border-radius: 8px;">
+                <h3>Зворотній зв'язок</h3>
+                <form action="#" method="POST">
+                    <fieldset>
+                        <legend>Напишіть нам</legend>
+
+                        <label for="fb_name">Ім'я:</label><br>
+                        <input type="text" id="fb_name" name="fb_name" required><br><br>
+
+                        <label for="fb_email">Ел. пошта:</label><br>
+                        <input type="email" id="fb_email" name="fb_email" required><br><br>
+
+                        <label for="fb_subject">Тема повідомлення:</label><br>
+                        <input type="text" id="fb_subject" name="fb_subject"><br><br>
+
+                        <label for="fb_message">Повідомлення:</label><br>
+                        <textarea id="fb_message" name="fb_message" rows="4" cols="30"></textarea><br><br>
+
+                        <button type="submit">Відправити</button>
+                    </fieldset>
+                </form>
+            </section>
+
+        </div>
+
+        <section style="margin-top: 40px;">
+            <h3>Посилання на соц. мережі</h3>
+            <div style="display: flex; gap: 15px; margin-top: 10px;">
+                <a href="#" style="padding: 10px 15px; background: #ddd; border-radius: 50%; text-decoration: none;">F</a>
+                <a href="#" style="padding: 10px 15px; background: #ddd; border-radius: 50%; text-decoration: none;">T</a>
+                <a href="#" style="padding: 10px 15px; background: #ddd; border-radius: 50%; text-decoration: none;">I</a>
+                <a href="#" style="padding: 10px 15px; background: #ddd; border-radius: 50%; text-decoration: none;">Y</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="text-align: center; padding: 20px; background: #333; color: #fff; margin-top: 40px;">
+        <p>Copyright &copy; 2026 | Завжди видно та знаходиться на цьому місці екрану</p>
+    </footer>
+
+</body>
+</html>
