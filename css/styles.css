@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -12,11 +17,20 @@ body {
     padding-bottom: 60px; 
 }
 
+main, section, article, aside, header, footer {
+    max-width: 100%;
+    min-width: 0;
+}
+
 header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 header h1 {
@@ -50,6 +64,15 @@ nav a:active {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
+.contact-header {
+    position: sticky;
+    top: 0;
+    background: #2b6cb0;
+    z-index: 1000;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
 main {
     max-width: 1000px;
     margin: 20px auto;
@@ -63,6 +86,12 @@ section, article {
     margin-bottom: 30px;
 }
 
+hr {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 25px 0;
+}
+
 h2 {
     color: #4a5568;
     border-bottom: 2px solid #e2e8f0;
@@ -70,16 +99,101 @@ h2 {
     margin-bottom: 15px;
 }
 
+.word-indent {
+    text-indent: 35px;
+    margin-bottom: 10px;
+}
+
+ul, ol {
+    padding-left: 40px;
+    margin-bottom: 15px;
+}
+
+blockquote {
+    border-left: 4px solid #667eea;
+    padding-left: 15px;
+    margin: 15px 0;
+    color: #4a5568;
+}
+
+img, figure img, .gallery-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+figure {
+    text-align: center;
+    margin: 20px 0;
+}
+
+figure img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+    font-style: italic;
+    color: #718096;
+    margin-top: 8px;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    background: #f7fafc;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.gallery-item p {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    background-color: #ffffff; 
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.gallery-item .contact-link-text {
+    color: #1a0dab;
+}
+
+
 table {
     width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
     margin-top: 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 th, td {
     border: 1px solid #cbd5e0;
     padding: 12px;
     text-align: left;
+    white-space: normal;
+    word-break: break-word;
 }
 
 th {
@@ -140,7 +254,7 @@ input:valid {
 }
 
 input:invalid {
-    border-color: #e53e3e;
+    border-color: #e8e8ff;
 }
 
 button, input[type="submit"], input[type="reset"] {
@@ -163,37 +277,94 @@ button:active {
     transform: scale(0.98);
 }
 
-figure {
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    margin: 20px 0;
+    padding: 20px 15px;
+    background-color: #edf2f7;
+    color: #4a5568;
+    font-size: 0.9rem;
+    margin-top: 20px;
+    word-break: break-word;
 }
 
-figure img {
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+@media (max-width: 1024px) {
+    main {
+        width: 92%;
+        padding: 25px;
+    }
 }
 
-figcaption {
-    font-style: italic;
-    color: #718096;
-    margin-top: 5px;
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    main {
+        width: 94%;
+        padding: 18px;
+        margin: 15px auto;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
 }
 
-.contact-header {
-    position: sticky;
-    top: 0;
-    background: #2b6cb0;
-    z-index: 1000;
-    padding: 10px 0;
-    border-bottom: 1px solid #ccc;
+@media (max-width: 480px) {
+    header {
+        padding: 15px 10px;
+    }
 
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding-left: 0;
+    }
+
+    main {
+        width: calc(100% - 20px);
+        padding: 12px;
+        margin: 10px auto;
+    }
+
+    .image-gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+	
+	   .gallery-item img {
+        height: auto;    
+        max-height: 320px;
+    }
 }
 
-.word-indent {
-    text-indent: 35px;
-}
+    th, td {
+        padding: 6px 4px;
+        font-size: 0.78rem;
+    }
 
-ul, ol {
-    padding-left: 40px;
-    margin-bottom: 15px;
+    ul, ol {
+        padding-left: 20px;
+    }
+
+    .word-indent {
+        text-indent: 20px;
+    }
+
+    fieldset {
+        padding: 12px;
+    }
+
+    button, input[type="submit"], input[type="reset"] {
+        width: 100%;
+    }
 }
